@@ -3,16 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>text to voice</title>
+    <title>Text to Voice</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=Space+Mono:wght@400;700&display=swap">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="container">
-        <h1>Text To Voice Convertor</h1>
-        <textarea placeholder="write your text here"></textarea>
-        <select></select>
-        <button>Listen</button>
+
+        <div class="header">
+            <div class="icon-wrap">
+                <svg viewBox="0 0 24 24">
+                    <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3zm-1 3a1 1 0 0 1 2 0v8a1 1 0 0 1-2 0V4zM7 10a1 1 0 0 0-2 0 7 7 0 0 0 14 0 1 1 0 0 0-2 0 5 5 0 0 1-10 0zm5 9a1 1 0 0 0-1 1v2a1 1 0 0 0 2 0v-2a1 1 0 0 0-1-1z"/>
+                </svg>
+            </div>
+            <div>
+                <div class="title">Text to Voice</div>
+                <div class="subtitle">SPEECH SYNTHESIZER</div>
+            </div>
+        </div>
+
+        <textarea id="ttsText" placeholder="Apna text yahan likhein..." oninput="updateCount()"></textarea>
+        <div class="char-count"><span id="charNum">0</span> / 500</div>
+
+        <div class="controls">
+            <div class="select-label">Voice</div>
+            <select id="voiceSelect"></select>
+        </div>
+
+        <button id="listenBtn" onclick="speak()">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            Listen
+        </button>
+
+        <div class="wave-wrap" id="waveWrap">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+
     </div>
-</body>
+
     <script src="script.js"></script>
+</body>
 </html>
